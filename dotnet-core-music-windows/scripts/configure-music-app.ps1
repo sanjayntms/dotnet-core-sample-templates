@@ -19,6 +19,7 @@ New-Item -ItemType Directory c:\music
 # Install iis
 Install-WindowsFeature web-server -IncludeManagementTools
 
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 # Install dot.net core sdk
 Invoke-WebRequest http://go.microsoft.com/fwlink/?LinkID=615460 -outfile c:\temp\vc_redistx64.exe
 Start-Process c:\temp\vc_redistx64.exe -ArgumentList '/quiet' -Wait
